@@ -10,7 +10,9 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:svelte-vgs.createSvelte"
+    "onCommand:svelte-vgs.createSvelte",
+    "onCommand:svelte-vgs.buildSvelte",
+    "onCommand:svelte-vgs.runSvelte"
   ],
   "main": "./extension.js",
   "contributes": {
@@ -22,6 +24,10 @@
       {
         "command": "svelte-vgs.buildSvelte",
         "title": "Build Svelte project"
+      },
+      {
+        "command": "svelte-vgs.runSvelte",
+        "title": "Run Svelte project"
       }
     ],
     "menus": {
@@ -32,6 +38,10 @@
         },
         {
           "command": "svelte-vgs.buildSvelte",
+          "group": "SvelteGroup@1"
+        },
+        {
+          "command": "svelte-vgs.runSvelte",
           "group": "SvelteGroup@1"
         }
       ]
