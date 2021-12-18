@@ -9,22 +9,36 @@ const vscode = require('vscode');
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
+	const createSvelte = vscode.commands.registerCommand('svelte-vgs.createSvelte', uri => {
+		vscode.window.showInformationMessage('Svelte starting');
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "svelte-vgs" is now active!');
+		// Kill all running terminals
+		vscode.window.terminals.forEach(t => {
+			t.dispose();
+		})
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with  registerCommand
-	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('svelte-vgs.helloWorld', function () {
-		// The code you place here will be executed every time your command is executed
-
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from svelte-vgs!');
+		const terminal = vscode.window.createTerminal("svelte-terminal");
+		terminal.show();
+		terminal.sendText(`cd "${uri.fsPath}"`);
+		terminal.sendText("npx degit https://github.com/thorcc/svelte-eksamen-starter .");
+		terminal.sendText("npm install");
+		terminal.sendText("npm run dev");
 	});
 
-	context.subscriptions.push(disposable);
+	const buildSvelte = vscode.commands.registerCommand('svelte-vgs.buildSvelte', uri => {
+		vscode.window.showInformationMessage('Building Svelte project');
+
+		// Kill all running terminals
+		vscode.window.terminals.forEach(t => {
+			t.dispose();
+		})
+		const terminal = vscode.window.createTerminal("svelte-terminal");
+		terminal.show();
+		terminal.sendText(`cd "${uri.fsPath}"`);
+		terminal.sendText("npm run build");
+	})
+
+	context.subscriptions.push(createSvelte, buildSvelte);
 }
 
 // this method is called when your extension is deactivated
