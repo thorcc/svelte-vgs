@@ -1,65 +1,38 @@
-# svelte-vgs README
+# Svelte-VGS
 
-This is the README for your extension "svelte-vgs". After writing up a brief description, we recommend including the following sections.
+Svelte-VGS er en utvidelse til VS Code, laget for programfagene IT1 og IT2 på VGS. 
 
-## Features
+Ved kjøring av `Create Svelte project` kopieres malen `https://github.com/thorcc/svelte-eksamen-starter`. 
+Ved kjøring av `Build Svelte` bygges hele Svelte-prosjektet til en kjørbar HTML-fil, som kopieres inn i mappen `LEVERING`. Innholdet i src-mappen kopieres også inn i mappen `LEVERING/Kode`.
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
 
-For example if there is an image subfolder under your extension project workspace:
+<p>
+  <img src="https://raw.githubusercontent.com/thorcc/svelte-vgs/master/image.png" alt="logo" width="300">
+</p>
 
-\!\[feature X\]\(images/feature-x.png\)
+## Dette trenger du:
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+- [Node.js](https://nodejs.org/en/)
+- Git
+  - [Git (mac)](https://sourceforge.net/projects/git-osx-installer/)
+  - [Git (windows)](https://git-scm.com/download/windows)
 
-## Requirements
+> Restart VS Code etter du har installert node og git.
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## create svelte
+```
+npx degit https://github.com/thorcc/svelte-eksamen-starter .
+npm install
+npm run dev
+```
 
-## Extension Settings
+## run svelte
+```
+npm run dev
+```
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## build svelte
 
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+```
+npm run build
+```
