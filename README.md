@@ -7,7 +7,7 @@ Ved kjøring av `Build Svelte` bygges hele Svelte-prosjektet til en kjørbar HTM
 
 
 <p>
-  <img src="https://raw.githubusercontent.com/thorcc/svelte-vgs/master/image.png" alt="logo" width="300">
+  <img src="https://raw.githubusercontent.com/thorcc/svelte-vgs/master/example.png" alt="logo" width="300">
 </p>
 
 ## Dette trenger du:
