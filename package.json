@@ -1,5 +1,6 @@
 {
   "name": "svelte-vgs",
+  "publisher": "thorcc",
   "repository": {
     "type": "git",
     "url": "https://github.com/thorcc/svelte-vgs.git"
