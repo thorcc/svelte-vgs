@@ -51,7 +51,23 @@ function activate(context) {
 		terminal.sendText("npm run dev");
 	})
 
-	context.subscriptions.push(createSvelte, buildSvelte, runSvelte);
+	const createSvelteKit = vscode.commands.registerCommand('svelte-vgs.createSvelteKit', uri => {
+		vscode.window.showInformationMessage('Svelte starting');
+
+		// Kill all running terminals
+		vscode.window.terminals.forEach(t => {
+			t.dispose();
+		})
+
+		const terminal = vscode.window.createTerminal("svelte-terminal");
+		terminal.show();
+		terminal.sendText(`cd "${uri.fsPath}"`);
+		terminal.sendText("npx degit https://github.com/thorcc/sveltekit-starter-eksamen .");
+		terminal.sendText("npm install");
+		terminal.sendText("npm run dev");
+	})
+
+	context.subscriptions.push(createSvelte, buildSvelte, runSvelte, createSvelteKit);
 }
 
 // this method is called when your extension is deactivated

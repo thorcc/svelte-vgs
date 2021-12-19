@@ -17,7 +17,8 @@
   "activationEvents": [
     "onCommand:svelte-vgs.createSvelte",
     "onCommand:svelte-vgs.buildSvelte",
-    "onCommand:svelte-vgs.runSvelte"
+    "onCommand:svelte-vgs.runSvelte",
+    "onCommand:svelte-vgs.createSvelteKit"
   ],
   "main": "./extension.js",
   "contributes": {
@@ -33,12 +34,20 @@
       {
         "command": "svelte-vgs.runSvelte",
         "title": "Run Svelte project"
+      },
+      {
+        "command": "svelte-vgs.createSvelteKit",
+        "title": "Create SvelteKit"
       }
     ],
     "menus": {
       "explorer/context": [
         {
           "command": "svelte-vgs.createSvelte",
+          "group": "SvelteGroup@1"
+        },
+        {
+          "command": "svelte-vgs.createSvelteKit",
           "group": "SvelteGroup@1"
         },
         {
