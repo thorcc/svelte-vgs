@@ -25,15 +25,15 @@
     "commands": [
       {
         "command": "svelte-vgs.createSvelte",
-        "title": "Create new Svelte project"
+        "title": "Create Svelte"
       },
       {
         "command": "svelte-vgs.buildSvelte",
-        "title": "Build Svelte project"
+        "title": "Build"
       },
       {
         "command": "svelte-vgs.runSvelte",
-        "title": "Run Svelte project"
+        "title": "Run"
       },
       {
         "command": "svelte-vgs.createSvelteKit",
@@ -51,11 +51,11 @@
           "group": "SvelteGroup@1"
         },
         {
-          "command": "svelte-vgs.buildSvelte",
+          "command": "svelte-vgs.runSvelte",
           "group": "SvelteGroup@1"
         },
         {
-          "command": "svelte-vgs.runSvelte",
+          "command": "svelte-vgs.buildSvelte",
           "group": "SvelteGroup@1"
         }
       ]
